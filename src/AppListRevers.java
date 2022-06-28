@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,9 +32,14 @@ public class AppListRevers {
     }
 
     private static List<Integer> getReversList(List<Integer> list) {
-        int num = calculateSumOfList(list);
-        List<Integer> list1 = convertNumToList(num);
-        return list1;
+//        int num = calculateSumOfList(list);
+//        List<Integer> list1 = convertNumToList(num);
+//        return list1;
+        for(int i = 0 , j = list.size()-1 ; i<j ; i++){
+            Integer remove = list.remove(j);
+            list.add(i , remove);
+        }
+        return list;
     }
 
     private static List<Integer> convertNumToList(int finalNum) {
